@@ -33,6 +33,16 @@ struct ContentView: View {
                         .cornerRadius(40)
                 }
             }
+
+            Button(action: resetCounter) {
+                Text("Сброс")
+                    .font(.title)
+                    .padding()
+                    .background(Color.accentColor) // Использование системного цвета
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding(.top, 20)
         }
         .padding()
         .background(Color(UIColor.systemBackground)) // Автоматическая поддержка фона
@@ -41,6 +51,11 @@ struct ContentView: View {
     // Метод для увеличения значения счетчика
     private func incrementCounter() {
         counter += 1
+    }
+
+    // Метод для сброса значения счетчика
+    private func resetCounter() {
+        counter = 0
     }
 }
 
